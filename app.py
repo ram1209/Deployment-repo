@@ -7,14 +7,15 @@ from resources.user import UserRegister
 from resources.store import Store,StoreList
 #import user as usr
 import sqlite3
+
 from werkzeug.security import safe_str_cmp
 app=Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True # To allow flask propagating exception even if debug is set to false on app
 api=Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+# @app.before_first_request
+# def create_tables():
+#     db.create_all()
 
 app.secret_key="jose"
 app.config['SQLAlCHEMY_TRACK_MODIFICATIONS']=False
